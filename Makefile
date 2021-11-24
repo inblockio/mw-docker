@@ -1,7 +1,7 @@
 .PHONY: build bash test container test-script uninstall logs
 
 build:
-	docker build --pull mw$(version) --target pro-mw -t prowiki/mediawiki:$(version) -t local-mw:$(version)
+	docker build --pull mw$(version) --target pro-mw -t inblockio/mediawiki:$(version) -t local-mw:$(version)
 
 bash:
 	docker exec -it temp-mw bash
@@ -26,16 +26,10 @@ uninstall:
 logs:
 	docker logs temp-mwo
 
-
-
 build-and-publish:
-	$(MAKE) version=37 build
-	$(MAKE) version=37 test
-	docker push prowiki/mediawiki:37
 	$(MAKE) version=37php74 build
 	$(MAKE) version=37php74 test
-	docker push prowiki/mediawiki:37php74
+	docker push 0xc000007b/mediawiki:37php74
 	$(MAKE) version=35 build
 	$(MAKE) version=35 test
-	docker push prowiki/mediawiki:35
-
+	docker push 0xc000007b/mediawiki:35
