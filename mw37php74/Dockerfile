@@ -1,5 +1,5 @@
 # Professional Wiki version of base MediaWiki
-FROM mediawiki:1.37 as pro-mw
+FROM mediawiki:1.37.1 as pro-mw
 
 RUN set -eux; \
 	\
