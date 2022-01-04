@@ -30,6 +30,6 @@ build-and-publish:
 	$(MAKE) version=37php74 build
 	$(MAKE) version=37php74 test
 	docker push inblockio/mediawiki:37php74
-	$(MAKE) version=35 build
-	$(MAKE) version=35 test
-	docker push inblockio/mediawiki:35
+#	$(MAKE) version=35 build
+#	$(MAKE) version=35 test
+#	docker push inblockio/mediawiki:35
